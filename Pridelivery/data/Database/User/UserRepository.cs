@@ -24,7 +24,7 @@ namespace Pridelivery.Repository.Database.User
         public static async Task<bool> registerUser(UserProfile data, MySqlConnection connection)
         {
             var query = $"insert into user values( null ,'{data.Name}','{data.Email}','{data.Phone}',SHA2(\"{data.Password}\", 512), '{data.Role}', now());";
-            return await DbFactory.runNonQueryCommand(query, connection); ;
+            return await DbFactory.runNonQueryCommand(query, connection);
         }
     }
 }

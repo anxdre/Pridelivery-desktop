@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using MetroFramework.Forms;
 using Pridelivery.Repository;
+using Pridelivery.view.mainmenu;
 using Pridelivery.View.Login;
 using Pridelivery.View.Register;
 
@@ -46,10 +47,13 @@ namespace Pridelivery
 
             try
             {
-                var status = await loginPresenter.getAuthenticationAsync(metroTextBoxEmail.Text, metroTextBoxPassword.Text);
-                if (status != null)
+                var profileData = await loginPresenter.getAuthenticationAsync(metroTextBoxEmail.Text, metroTextBoxPassword.Text);
+                if (profileData != null)
                 {
-                    Console.WriteLine(status.Name);
+                    var form = new MainMenu(profileData);
+                    this.Hide();
+                    form.ShowDialog();
+                    this.Close();
                 }
             }
             catch (Exception ex)
