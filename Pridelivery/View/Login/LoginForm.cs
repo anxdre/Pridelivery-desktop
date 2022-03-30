@@ -43,9 +43,10 @@ namespace Pridelivery
 
         private async void metroButtonLogin_Click(object sender, EventArgs e)
         {
+
             try
             {
-                var status = await Task.Factory.StartNew(() => loginPresenter.getAuthentication(metroTextBoxEmail.Text, metroTextBoxPassword.Text));
+                var status = await loginPresenter.getAuthenticationAsync(metroTextBoxEmail.Text, metroTextBoxPassword.Text);
                 if (status != null)
                 {
                     Console.WriteLine(status.Name);

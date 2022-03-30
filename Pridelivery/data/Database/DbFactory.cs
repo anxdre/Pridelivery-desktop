@@ -8,46 +8,36 @@ namespace Pridelivery.Repository.Database
     public abstract class DbFactory
     {
 
-        public static async Task<MySqlDataReader> runQueryCommand(string sql,MySqlConnection connection)
+        public static async Task<MySqlDataReader> runQueryCommand(string sql, MySqlConnection connection)
         {
             var query = connection.CreateCommand();
             query.CommandText = sql;
+            var reader = await query.ExecuteReaderAsync();
+            if (!reader.HasRows)
+            {
+                throw new NullReferenceException("data not found");
+            }
+            return reader;
+        }
+
+        public static async Task<bool> runNonQueryCommand(string sql, MySqlConnection connection)
+        {
+            var query = connection.CreateCommand();
+            var transacion = await Task.Run(() => connection.BeginTransaction());
+            query.Connection = connection;
+            query.Transaction = transacion;
             try
             {
-                var reader = await query.ExecuteReaderAsync();
-                return reader;
+                query.CommandText = sql;
+                await query.ExecuteNonQueryAsync();
+                await Task.Run(() => transacion.Commit());
+                return true;
             }
             catch (Exception ex)
             {
+                transacion.Rollback();
                 throw ex;
             }
         }
-
-        public static async Task<int> runNonQueryCommand(string sql, MySqlConnection connection)
-        {
-            var query = new MySqlCommand(sql, connection);
-            var data = await query.ExecuteNonQueryAsync();
-            return data;
-        }
-
-        //public static async runNonQueryCommand(string sql, MySqlConnection connection)
-        //{
-        //    await connection.OpenAsync();
-        //    var query = connection.CreateCommand();
-        //    var transacion = await Task.Run(() => connection.BeginTransaction());
-        //    query.Connection = connection;
-        //    query.Transaction = transacion;
-        //    try
-        //    {
-        //        query.CommandText = sql;
-        //        await query.ExecuteNonQueryAsync();
-        //        await Task.Run(() => transacion.Commit());
-
-        //    }
-        //    catch (Exception ex)
-        //    {
-
-        //    }
-        //}
     }
 }

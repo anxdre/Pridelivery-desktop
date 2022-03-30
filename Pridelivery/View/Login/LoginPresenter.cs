@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MySqlConnector;
+using Pridelivery.Repository;
 using Pridelivery.Repository.Database.User;
 using Pridelivery.Repository.Model;
 
@@ -10,15 +12,33 @@ namespace Pridelivery.View.Login
 {
     internal class LoginPresenter
     {
-        public UserProfile getAuthentication(string email, string password)
+        MySqlConnection connection = DbConnector.Instance.createConnection();
+        public async Task<UserProfile> getAuthenticationAsync(string email, string password)
         {
-            UserProfile data = null;
-                Task.Run(() =>
+            try
+            {
+                await connection.OpenAsync();
+                var reader = await UserRepository.getAuthentication(email, password, connection);
+                List<object> result = new List<object>();
+
+                while (await reader.ReadAsync())
                 {
-                    var task = UserRepository.getAuthentication(email, password);
-                    data = task.Result;
-                }).Wait();
-            return data;
+                    for (int i = 0; i < reader.FieldCount; i++)
+                    {
+                        result.Add(await reader.GetFieldValueAsync<object>(i));
+                        Console.WriteLine(result[i]);
+                    }
+                }
+                return new UserProfile((int)result[0], (string)result[1], (string)result[2], (string)result[3], (string)result[4], (int)result[5]);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                await connection.CloseAsync();
+            }
         }
     }
 }
