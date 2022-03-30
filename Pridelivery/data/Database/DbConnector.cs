@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading.Tasks;
 using MySqlConnector;
 
 namespace Pridelivery.Repository
@@ -11,7 +12,6 @@ namespace Pridelivery.Repository
         private MySqlSslMode sslMode;
         private UInt16 port;
         private string server;
-        private MySqlConnection sqlConnection;
 
         //singleton instance
         private static readonly Lazy<DbConnector> instance = new Lazy<DbConnector>(() => new DbConnector());
@@ -34,29 +34,19 @@ namespace Pridelivery.Repository
             }
         }
 
-        public MySqlConnection openConnectionAsync()
+        public MySqlConnection createConnection()
         {
-            if (sqlConnection == null)
+            var builder = new MySqlConnectionStringBuilder
             {
-                var builder = new MySqlConnectionStringBuilder
-                {
-                    Server = this.server,
-                    UserID = this.username,
-                    Password = this.password,
-                    Database = this.database,
-                    Port = this.port,
-                    SslMode = this.sslMode
-                };
-                var connection = new MySqlConnection(builder.ConnectionString);
-                sqlConnection = connection;
-                connection.OpenAsync();
-            }
-            else if (sqlConnection.State == System.Data.ConnectionState.Closed)
-            {
-                sqlConnection.OpenAsync();
-            }
-
-            return sqlConnection;
+                Server = this.server,
+                UserID = this.username,
+                Password = this.password,
+                Database = this.database,
+                Port = this.port,
+                SslMode = this.sslMode
+            };
+            var connection = new MySqlConnection(builder.ConnectionString);
+            return connection;
         }
     }
 }

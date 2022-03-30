@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Pridelivery.Repository.Model
 {
@@ -11,7 +12,7 @@ namespace Pridelivery.Repository.Model
         private int role;
         private string password;
 
-        public UserProfile(int id, string name, string email, string phone, int role, string password)
+        public UserProfile(int id, string name, string email, string phone, string password, int role)
         {
             this.Id = id;
             this.Name = name;
@@ -37,7 +38,9 @@ namespace Pridelivery.Repository.Model
                 }
             }
         }
-        public string Email { get => email; set
+        public string Email
+        {
+            get => email; set
             {
                 if (value.Length != 0)
                 {
@@ -49,7 +52,9 @@ namespace Pridelivery.Repository.Model
                 }
             }
         }
-        public string Phone { get => phone; set
+        public string Phone
+        {
+            get => phone; set
             {
                 if (value.Length != 0)
                 {
@@ -61,7 +66,9 @@ namespace Pridelivery.Repository.Model
                 }
             }
         }
-        public string Password { get => password; set
+        public string Password
+        {
+            get => password; set
             {
                 if (value.Length != 0 && value.Length > 5)
                 {
@@ -73,7 +80,9 @@ namespace Pridelivery.Repository.Model
                 }
             }
         }
-        public int Role { get => role; set => role = value; }
-
+        public int Role
+        {
+            get => role; set => role = value;
+        }
     }
 }

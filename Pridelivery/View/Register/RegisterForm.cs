@@ -29,7 +29,7 @@ namespace Pridelivery.View.Register
             {
                 //tenary operator
                 int role = metroRadioButtonUser.Checked ? 1 : 0;
-                UserProfile user = new UserProfile(0, metroTextBoxName.Text, metroTextBoxEmail.Text, metroTextBoxPhone.Text, role, metroTextBoxPassword.Text);
+                UserProfile user = new UserProfile(0, metroTextBoxName.Text, metroTextBoxEmail.Text, metroTextBoxPhone.Text,metroTextBoxPassword.Text, role);
                 checkPassword(user);
                 var status = await Task.Factory.StartNew(() => presenter.getRegistered(user));
                 if (status)

@@ -13,7 +13,6 @@ namespace Pridelivery.View.Register
     {
         public bool getRegistered(UserProfile user) {
             bool registered = false;
-            Console.WriteLine($"Registering.... user {user.Name}");
             Task.Run(() => {
                 var task = UserRepository.registerUser(user);
                 if (task.Result == 1) {
