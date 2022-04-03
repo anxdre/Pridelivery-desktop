@@ -70,8 +70,8 @@
             this.metroTextBoxName.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.metroTextBoxName.CustomButton.UseSelectable = true;
             this.metroTextBoxName.CustomButton.Visible = false;
-            this.metroTextBoxName.Lines = new string[] {
-        "metroTextBoxName"};
+            this.metroTextBoxName.Enabled = false;
+            this.metroTextBoxName.Lines = new string[0];
             this.metroTextBoxName.Location = new System.Drawing.Point(225, 130);
             this.metroTextBoxName.MaxLength = 32767;
             this.metroTextBoxName.Name = "metroTextBoxName";
@@ -83,7 +83,6 @@
             this.metroTextBoxName.ShortcutsEnabled = true;
             this.metroTextBoxName.Size = new System.Drawing.Size(296, 23);
             this.metroTextBoxName.TabIndex = 1;
-            this.metroTextBoxName.Text = "metroTextBoxName";
             this.metroTextBoxName.UseSelectable = true;
             this.metroTextBoxName.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTextBoxName.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -111,8 +110,8 @@
             this.metroTextBoxEmail.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.metroTextBoxEmail.CustomButton.UseSelectable = true;
             this.metroTextBoxEmail.CustomButton.Visible = false;
-            this.metroTextBoxEmail.Lines = new string[] {
-        "metroTextBox1"};
+            this.metroTextBoxEmail.Enabled = false;
+            this.metroTextBoxEmail.Lines = new string[0];
             this.metroTextBoxEmail.Location = new System.Drawing.Point(225, 178);
             this.metroTextBoxEmail.MaxLength = 32767;
             this.metroTextBoxEmail.Name = "metroTextBoxEmail";
@@ -124,7 +123,6 @@
             this.metroTextBoxEmail.ShortcutsEnabled = true;
             this.metroTextBoxEmail.Size = new System.Drawing.Size(296, 23);
             this.metroTextBoxEmail.TabIndex = 1;
-            this.metroTextBoxEmail.Text = "metroTextBox1";
             this.metroTextBoxEmail.UseSelectable = true;
             this.metroTextBoxEmail.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTextBoxEmail.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -161,8 +159,8 @@
             this.metroTextBoxPhone.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.metroTextBoxPhone.CustomButton.UseSelectable = true;
             this.metroTextBoxPhone.CustomButton.Visible = false;
-            this.metroTextBoxPhone.Lines = new string[] {
-        "metroTextBox1"};
+            this.metroTextBoxPhone.Enabled = false;
+            this.metroTextBoxPhone.Lines = new string[0];
             this.metroTextBoxPhone.Location = new System.Drawing.Point(225, 226);
             this.metroTextBoxPhone.MaxLength = 32767;
             this.metroTextBoxPhone.Name = "metroTextBoxPhone";
@@ -174,7 +172,6 @@
             this.metroTextBoxPhone.ShortcutsEnabled = true;
             this.metroTextBoxPhone.Size = new System.Drawing.Size(296, 23);
             this.metroTextBoxPhone.TabIndex = 1;
-            this.metroTextBoxPhone.Text = "metroTextBox1";
             this.metroTextBoxPhone.UseSelectable = true;
             this.metroTextBoxPhone.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTextBoxPhone.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
@@ -190,11 +187,12 @@
             // 
             // metroComboBoxRole
             // 
+            this.metroComboBoxRole.Enabled = false;
             this.metroComboBoxRole.FormattingEnabled = true;
             this.metroComboBoxRole.ItemHeight = 23;
             this.metroComboBoxRole.Items.AddRange(new object[] {
-            "User",
-            "Courier"});
+            "Courier",
+            "User"});
             this.metroComboBoxRole.Location = new System.Drawing.Point(225, 275);
             this.metroComboBoxRole.Name = "metroComboBoxRole";
             this.metroComboBoxRole.Size = new System.Drawing.Size(296, 29);
@@ -204,15 +202,20 @@
             // metroButtonLogout
             // 
             this.metroButtonLogout.BackColor = System.Drawing.Color.Tomato;
+            this.metroButtonLogout.CausesValidation = false;
             this.metroButtonLogout.ForeColor = System.Drawing.Color.White;
             this.metroButtonLogout.Location = new System.Drawing.Point(74, 282);
             this.metroButtonLogout.Name = "metroButtonLogout";
             this.metroButtonLogout.Size = new System.Drawing.Size(75, 23);
+            this.metroButtonLogout.Style = MetroFramework.MetroColorStyle.Red;
             this.metroButtonLogout.TabIndex = 4;
             this.metroButtonLogout.Text = "Logout";
+            this.metroButtonLogout.Theme = MetroFramework.MetroThemeStyle.Light;
             this.metroButtonLogout.UseCustomBackColor = true;
             this.metroButtonLogout.UseCustomForeColor = true;
             this.metroButtonLogout.UseSelectable = true;
+            this.metroButtonLogout.UseStyleColors = true;
+            this.metroButtonLogout.Click += new System.EventHandler(this.metroButtonLogout_Click);
             // 
             // metroToggleEdit
             // 
@@ -223,6 +226,7 @@
             this.metroToggleEdit.TabIndex = 5;
             this.metroToggleEdit.Text = "Off";
             this.metroToggleEdit.UseSelectable = true;
+            this.metroToggleEdit.CheckedChanged += new System.EventHandler(this.metroToggleEdit_CheckedChanged);
             // 
             // metroLabel5
             // 
@@ -247,6 +251,8 @@
             this.metroButtonSave.UseCustomBackColor = true;
             this.metroButtonSave.UseCustomForeColor = true;
             this.metroButtonSave.UseSelectable = true;
+            this.metroButtonSave.Visible = false;
+            this.metroButtonSave.Click += new System.EventHandler(this.metroButtonSave_Click);
             // 
             // ProfileDetail
             // 

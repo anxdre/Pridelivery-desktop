@@ -103,8 +103,19 @@
   <ItemGroup>
     <Compile Include="data\database\DbConnector.cs" />
     <Compile Include="data\database\DbFactory.cs" />
+    <Compile Include="data\database\user\CategoryRepository.cs" />
+    <Compile Include="data\database\user\OrderRepository.cs" />
     <Compile Include="data\database\user\UserRepository.cs" />
+    <Compile Include="data\model\Category.cs" />
+    <Compile Include="data\model\Order.cs" />
     <Compile Include="data\model\UserProfile.cs" />
+    <Compile Include="view\history\OrderHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\history\OrderHistory.Designer.cs">
+      <DependentUpon>OrderHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\history\OrderHistroyPresenter.cs" />
     <Compile Include="view\login\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -127,6 +138,7 @@
     <Compile Include="view\profile\ProfileDetail.Designer.cs">
       <DependentUpon>ProfileDetail.cs</DependentUpon>
     </Compile>
+    <Compile Include="view\profile\ProfilePresenter.cs" />
     <Compile Include="view\register\RegisterForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +146,16 @@
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
     <Compile Include="view\register\RegisterPresenter.cs" />
+    <Compile Include="view\sendpacket\SendPacket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\sendpacket\SendPacket.Designer.cs">
+      <DependentUpon>SendPacket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\sendpacket\SendPacketPresenter.cs" />
+    <EmbeddedResource Include="view\history\OrderHistory.resx">
+      <DependentUpon>OrderHistory.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="view\login\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -155,6 +177,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="view\register\RegisterForm.resx">
       <DependentUpon>RegisterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\sendpacket\SendPacket.resx">
+      <DependentUpon>SendPacket.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

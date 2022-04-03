@@ -29,24 +29,24 @@
         private void InitializeComponent()
         {
             this.metroTabControl = new MetroFramework.Controls.MetroTabControl();
-            this.metroTabPageUser = new MetroFramework.Controls.MetroTabPage();
-            this.metroTileSendPacket = new MetroFramework.Controls.MetroTile();
-            this.metroTileExitUser = new MetroFramework.Controls.MetroTile();
-            this.metroTileHistoryUser = new MetroFramework.Controls.MetroTile();
-            this.metroTileProfileUser = new MetroFramework.Controls.MetroTile();
             this.metroTabPageCourier = new MetroFramework.Controls.MetroTabPage();
             this.metroTileOrderTask = new MetroFramework.Controls.MetroTile();
             this.metroTileExitCourier = new MetroFramework.Controls.MetroTile();
             this.metroTileHistory = new MetroFramework.Controls.MetroTile();
             this.metroTileProfileCourier = new MetroFramework.Controls.MetroTile();
+            this.metroTabPageUser = new MetroFramework.Controls.MetroTabPage();
+            this.metroTileSendPacket = new MetroFramework.Controls.MetroTile();
+            this.metroTileExitUser = new MetroFramework.Controls.MetroTile();
+            this.metroTileHistoryUser = new MetroFramework.Controls.MetroTile();
+            this.metroTileProfileUser = new MetroFramework.Controls.MetroTile();
             this.metroTabPageAdmin = new MetroFramework.Controls.MetroTabPage();
             this.metroTileHistoryAdmin = new MetroFramework.Controls.MetroTile();
             this.metroTileExitAdmin = new MetroFramework.Controls.MetroTile();
             this.metroTileUserMan = new MetroFramework.Controls.MetroTile();
             this.metroLabelName = new MetroFramework.Controls.MetroLabel();
             this.metroTabControl.SuspendLayout();
-            this.metroTabPageUser.SuspendLayout();
             this.metroTabPageCourier.SuspendLayout();
+            this.metroTabPageUser.SuspendLayout();
             this.metroTabPageAdmin.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,68 +58,10 @@
             this.metroTabControl.Controls.Add(this.metroTabPageAdmin);
             this.metroTabControl.Location = new System.Drawing.Point(23, 63);
             this.metroTabControl.Name = "metroTabControl";
-            this.metroTabControl.SelectedIndex = 0;
+            this.metroTabControl.SelectedIndex = 1;
             this.metroTabControl.Size = new System.Drawing.Size(754, 364);
             this.metroTabControl.TabIndex = 0;
             this.metroTabControl.UseSelectable = true;
-            // 
-            // metroTabPageUser
-            // 
-            this.metroTabPageUser.Controls.Add(this.metroTileSendPacket);
-            this.metroTabPageUser.Controls.Add(this.metroTileExitUser);
-            this.metroTabPageUser.Controls.Add(this.metroTileHistoryUser);
-            this.metroTabPageUser.Controls.Add(this.metroTileProfileUser);
-            this.metroTabPageUser.HorizontalScrollbarBarColor = true;
-            this.metroTabPageUser.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroTabPageUser.HorizontalScrollbarSize = 10;
-            this.metroTabPageUser.Location = new System.Drawing.Point(4, 41);
-            this.metroTabPageUser.Name = "metroTabPageUser";
-            this.metroTabPageUser.Size = new System.Drawing.Size(746, 319);
-            this.metroTabPageUser.TabIndex = 0;
-            this.metroTabPageUser.Text = "User";
-            this.metroTabPageUser.VerticalScrollbarBarColor = true;
-            this.metroTabPageUser.VerticalScrollbarHighlightOnWheel = false;
-            this.metroTabPageUser.VerticalScrollbarSize = 10;
-            // 
-            // metroTileSendPacket
-            // 
-            this.metroTileSendPacket.ActiveControl = null;
-            this.metroTileSendPacket.Location = new System.Drawing.Point(236, 31);
-            this.metroTileSendPacket.Name = "metroTileSendPacket";
-            this.metroTileSendPacket.Size = new System.Drawing.Size(267, 263);
-            this.metroTileSendPacket.TabIndex = 2;
-            this.metroTileSendPacket.Text = "Send Packet";
-            this.metroTileSendPacket.UseSelectable = true;
-            // 
-            // metroTileExitUser
-            // 
-            this.metroTileExitUser.ActiveControl = null;
-            this.metroTileExitUser.Location = new System.Drawing.Point(152, 140);
-            this.metroTileExitUser.Name = "metroTileExitUser";
-            this.metroTileExitUser.Size = new System.Drawing.Size(78, 80);
-            this.metroTileExitUser.TabIndex = 2;
-            this.metroTileExitUser.Text = "Exit";
-            this.metroTileExitUser.UseSelectable = true;
-            // 
-            // metroTileHistoryUser
-            // 
-            this.metroTileHistoryUser.ActiveControl = null;
-            this.metroTileHistoryUser.Location = new System.Drawing.Point(509, 31);
-            this.metroTileHistoryUser.Name = "metroTileHistoryUser";
-            this.metroTileHistoryUser.Size = new System.Drawing.Size(139, 103);
-            this.metroTileHistoryUser.TabIndex = 2;
-            this.metroTileHistoryUser.Text = "History";
-            this.metroTileHistoryUser.UseSelectable = true;
-            // 
-            // metroTileProfileUser
-            // 
-            this.metroTileProfileUser.ActiveControl = null;
-            this.metroTileProfileUser.Location = new System.Drawing.Point(91, 31);
-            this.metroTileProfileUser.Name = "metroTileProfileUser";
-            this.metroTileProfileUser.Size = new System.Drawing.Size(139, 103);
-            this.metroTileProfileUser.TabIndex = 2;
-            this.metroTileProfileUser.Text = "Profile";
-            this.metroTileProfileUser.UseSelectable = true;
             // 
             // metroTabPageCourier
             // 
@@ -178,6 +120,68 @@
             this.metroTileProfileCourier.TabIndex = 6;
             this.metroTileProfileCourier.Text = "Profile";
             this.metroTileProfileCourier.UseSelectable = true;
+            this.metroTileProfileCourier.Click += new System.EventHandler(this.metroTileProfileCourier_Click);
+            // 
+            // metroTabPageUser
+            // 
+            this.metroTabPageUser.Controls.Add(this.metroTileSendPacket);
+            this.metroTabPageUser.Controls.Add(this.metroTileExitUser);
+            this.metroTabPageUser.Controls.Add(this.metroTileHistoryUser);
+            this.metroTabPageUser.Controls.Add(this.metroTileProfileUser);
+            this.metroTabPageUser.HorizontalScrollbarBarColor = true;
+            this.metroTabPageUser.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroTabPageUser.HorizontalScrollbarSize = 10;
+            this.metroTabPageUser.Location = new System.Drawing.Point(4, 41);
+            this.metroTabPageUser.Name = "metroTabPageUser";
+            this.metroTabPageUser.Size = new System.Drawing.Size(746, 319);
+            this.metroTabPageUser.TabIndex = 0;
+            this.metroTabPageUser.Text = "User";
+            this.metroTabPageUser.VerticalScrollbarBarColor = true;
+            this.metroTabPageUser.VerticalScrollbarHighlightOnWheel = false;
+            this.metroTabPageUser.VerticalScrollbarSize = 10;
+            this.metroTabPageUser.Click += new System.EventHandler(this.metroTabPageUser_Click);
+            // 
+            // metroTileSendPacket
+            // 
+            this.metroTileSendPacket.ActiveControl = null;
+            this.metroTileSendPacket.Location = new System.Drawing.Point(236, 31);
+            this.metroTileSendPacket.Name = "metroTileSendPacket";
+            this.metroTileSendPacket.Size = new System.Drawing.Size(267, 263);
+            this.metroTileSendPacket.TabIndex = 2;
+            this.metroTileSendPacket.Text = "Send Packet";
+            this.metroTileSendPacket.UseSelectable = true;
+            this.metroTileSendPacket.Click += new System.EventHandler(this.metroTileSendPacket_Click);
+            // 
+            // metroTileExitUser
+            // 
+            this.metroTileExitUser.ActiveControl = null;
+            this.metroTileExitUser.Location = new System.Drawing.Point(152, 140);
+            this.metroTileExitUser.Name = "metroTileExitUser";
+            this.metroTileExitUser.Size = new System.Drawing.Size(78, 80);
+            this.metroTileExitUser.TabIndex = 2;
+            this.metroTileExitUser.Text = "Exit";
+            this.metroTileExitUser.UseSelectable = true;
+            // 
+            // metroTileHistoryUser
+            // 
+            this.metroTileHistoryUser.ActiveControl = null;
+            this.metroTileHistoryUser.Location = new System.Drawing.Point(509, 31);
+            this.metroTileHistoryUser.Name = "metroTileHistoryUser";
+            this.metroTileHistoryUser.Size = new System.Drawing.Size(139, 103);
+            this.metroTileHistoryUser.TabIndex = 2;
+            this.metroTileHistoryUser.Text = "History";
+            this.metroTileHistoryUser.UseSelectable = true;
+            // 
+            // metroTileProfileUser
+            // 
+            this.metroTileProfileUser.ActiveControl = null;
+            this.metroTileProfileUser.Location = new System.Drawing.Point(91, 31);
+            this.metroTileProfileUser.Name = "metroTileProfileUser";
+            this.metroTileProfileUser.Size = new System.Drawing.Size(139, 103);
+            this.metroTileProfileUser.TabIndex = 2;
+            this.metroTileProfileUser.Text = "Profile";
+            this.metroTileProfileUser.UseSelectable = true;
+            this.metroTileProfileUser.Click += new System.EventHandler(this.metroTileProfileUser_Click);
             // 
             // metroTabPageAdmin
             // 
@@ -250,8 +254,8 @@
             this.Text = "Main Menu";
             this.Load += new System.EventHandler(this.MainMenu_Load);
             this.metroTabControl.ResumeLayout(false);
-            this.metroTabPageUser.ResumeLayout(false);
             this.metroTabPageCourier.ResumeLayout(false);
+            this.metroTabPageUser.ResumeLayout(false);
             this.metroTabPageAdmin.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

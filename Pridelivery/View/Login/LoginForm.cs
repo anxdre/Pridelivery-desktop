@@ -21,19 +21,7 @@ namespace Pridelivery
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    var connection = DbConnector.Instance.createConnection();
-            //    if (connection != null)
-            //    {
-            //        MessageBox.Show("Database Connection Success");
-            //        connection.Close();
-            //    }
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-            //}
+           
         }
 
         private void metroButtonRegister_Click(object sender, EventArgs e)

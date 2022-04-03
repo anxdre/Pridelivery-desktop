@@ -9,12 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework.Forms;
 using Pridelivery.Repository.Model;
+using Pridelivery.view.profile;
+using Pridelivery.view.sendpacket;
 
 namespace Pridelivery.view.mainmenu
 {
     public partial class MainMenu : MetroForm
     {
-        UserProfile profile;
+        public UserProfile profile;
         public MainMenu(UserProfile userData)
         {
             InitializeComponent();
@@ -43,6 +45,30 @@ namespace Pridelivery.view.mainmenu
             }
         }
 
-       
+        private void metroTileProfileCourier_Click(object sender, EventArgs e)
+        {
+            var form = new ProfileDetail(this, profile);
+            form.ShowDialog();
+            this.MainMenu_Load(sender, e);
+        }
+
+        private void metroTileProfileUser_Click(object sender, EventArgs e)
+        {
+            var form = new ProfileDetail(this, profile);
+            form.ShowDialog();
+            this.MainMenu_Load(sender, e);
+
+        }
+
+        private void metroTabPageUser_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void metroTileSendPacket_Click(object sender, EventArgs e)
+        {
+            var form = new SendPacket(profile);
+            form.ShowDialog();
+        }
     }
 }
