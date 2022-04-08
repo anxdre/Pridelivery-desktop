@@ -12,6 +12,8 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,6 +35,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Aspose.PDF, Version=22.3.0.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <HintPath>..\packages\Aspose.PDF.22.3.0\lib\net4.0\Aspose.PDF.dll</HintPath>
+    </Reference>
     <Reference Include="ControlzEx, Version=4.0.0.0, Culture=neutral, PublicKeyToken=69f1c32f803d307e, processorArchitecture=MSIL">
       <HintPath>..\packages\ControlzEx.4.4.0\lib\net462\ControlzEx.dll</HintPath>
     </Reference>
@@ -103,12 +108,20 @@
   <ItemGroup>
     <Compile Include="data\database\DbConnector.cs" />
     <Compile Include="data\database\DbFactory.cs" />
-    <Compile Include="data\database\user\CategoryRepository.cs" />
-    <Compile Include="data\database\user\OrderRepository.cs" />
+    <Compile Include="data\database\category\CategoryRepository.cs" />
+    <Compile Include="data\database\order\OrderRepository.cs" />
     <Compile Include="data\database\user\UserRepository.cs" />
     <Compile Include="data\model\Category.cs" />
     <Compile Include="data\model\Order.cs" />
+    <Compile Include="data\model\OrderDetail.cs" />
     <Compile Include="data\model\UserProfile.cs" />
+    <Compile Include="utility\KeyWarn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="utility\KeyWarn.Designer.cs">
+      <DependentUpon>KeyWarn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="utility\PdfExport.cs" />
     <Compile Include="view\history\OrderHistory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,6 +166,9 @@
       <DependentUpon>SendPacket.cs</DependentUpon>
     </Compile>
     <Compile Include="view\sendpacket\SendPacketPresenter.cs" />
+    <EmbeddedResource Include="utility\KeyWarn.resx">
+      <DependentUpon>KeyWarn.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="view\history\OrderHistory.resx">
       <DependentUpon>OrderHistory.cs</DependentUpon>
     </EmbeddedResource>
@@ -198,7 +214,9 @@
   <ItemGroup>
     <None Include="resources\logo.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="exported\" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="resources\user.png" />
   </ItemGroup>

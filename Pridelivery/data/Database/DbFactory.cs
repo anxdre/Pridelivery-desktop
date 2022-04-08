@@ -39,5 +39,27 @@ namespace Pridelivery.Repository.Database
                 throw ex;
             }
         }
+        public static async Task<bool> runNonQueryCommand(List<String> sql, MySqlConnection connection)
+        {
+            var query = connection.CreateCommand();
+            var transacion = await Task.Run(() => connection.BeginTransaction());
+            query.Connection = connection;
+            query.Transaction = transacion;
+            try
+            {
+                foreach(var queryItem in sql)
+                {
+                    query.CommandText = queryItem;
+                    await query.ExecuteNonQueryAsync();
+                }         
+                await Task.Run(() => transacion.Commit());
+                return true;
+            }
+            catch (Exception ex)
+            {
+                transacion.Rollback();
+                throw ex;
+            }
+        }
     }
 }

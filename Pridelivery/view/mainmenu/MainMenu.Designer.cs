@@ -161,6 +161,7 @@
             this.metroTileExitUser.TabIndex = 2;
             this.metroTileExitUser.Text = "Exit";
             this.metroTileExitUser.UseSelectable = true;
+            this.metroTileExitUser.Click += new System.EventHandler(this.metroTileExitUser_Click);
             // 
             // metroTileHistoryUser
             // 
@@ -171,6 +172,7 @@
             this.metroTileHistoryUser.TabIndex = 2;
             this.metroTileHistoryUser.Text = "History";
             this.metroTileHistoryUser.UseSelectable = true;
+            this.metroTileHistoryUser.Click += new System.EventHandler(this.metroTileHistoryUser_Click);
             // 
             // metroTileProfileUser
             // 

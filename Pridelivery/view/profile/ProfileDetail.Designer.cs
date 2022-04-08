@@ -208,7 +208,8 @@
             this.metroButtonLogout.Name = "metroButtonLogout";
             this.metroButtonLogout.Size = new System.Drawing.Size(75, 23);
             this.metroButtonLogout.Style = MetroFramework.MetroColorStyle.Red;
-            this.metroButtonLogout.TabIndex = 4;
+            this.metroButtonLogout.TabIndex = 7;
+            this.metroButtonLogout.TabStop = false;
             this.metroButtonLogout.Text = "Logout";
             this.metroButtonLogout.Theme = MetroFramework.MetroThemeStyle.Light;
             this.metroButtonLogout.UseCustomBackColor = true;

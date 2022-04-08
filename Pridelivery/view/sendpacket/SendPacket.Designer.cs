@@ -30,11 +30,9 @@
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.metroTextBoxPicAddress = new MetroFramework.Controls.MetroTextBox();
-            this.metroComboBoxPickCity = new MetroFramework.Controls.MetroComboBox();
             this.metroComboBoxPickDistrict = new MetroFramework.Controls.MetroComboBox();
             this.metroComboBoxPickProvince = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel11 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -49,11 +47,9 @@
             this.metroLabel10 = new MetroFramework.Controls.MetroLabel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.metroTextBoxShipDetail = new MetroFramework.Controls.MetroTextBox();
-            this.metroComboBoxShipCity = new MetroFramework.Controls.MetroComboBox();
             this.metroComboBoxShipDistrict = new MetroFramework.Controls.MetroComboBox();
             this.metroComboBoxShipProvince = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
-            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel6 = new MetroFramework.Controls.MetroLabel();
             this.metroLabel12 = new MetroFramework.Controls.MetroLabel();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
@@ -75,6 +71,11 @@
             this.metroComboBoxDeliveryType = new MetroFramework.Controls.MetroComboBox();
             this.metroTextBoxTotalPrice = new MetroFramework.Controls.MetroTextBox();
             this.metroButtonOrder = new MetroFramework.Controls.MetroButton();
+            this.metroProgressBar1 = new MetroFramework.Controls.MetroProgressBar();
+            this.metroComboBoxPickCity = new MetroFramework.Controls.MetroComboBox();
+            this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
+            this.metroComboBoxShipCity = new MetroFramework.Controls.MetroComboBox();
+            this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -86,12 +87,12 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.metroTextBoxPicAddress);
             this.groupBox1.Controls.Add(this.metroComboBoxPickCity);
+            this.groupBox1.Controls.Add(this.metroLabel3);
+            this.groupBox1.Controls.Add(this.metroTextBoxPicAddress);
             this.groupBox1.Controls.Add(this.metroComboBoxPickDistrict);
             this.groupBox1.Controls.Add(this.metroComboBoxPickProvince);
             this.groupBox1.Controls.Add(this.metroLabel11);
-            this.groupBox1.Controls.Add(this.metroLabel3);
             this.groupBox1.Controls.Add(this.metroLabel2);
             this.groupBox1.Controls.Add(this.metroLabel1);
             this.groupBox1.Location = new System.Drawing.Point(26, 355);
@@ -131,21 +132,15 @@
             this.metroTextBoxPicAddress.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTextBoxPicAddress.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // metroComboBoxPickCity
-            // 
-            this.metroComboBoxPickCity.FormattingEnabled = true;
-            this.metroComboBoxPickCity.ItemHeight = 23;
-            this.metroComboBoxPickCity.Location = new System.Drawing.Point(9, 169);
-            this.metroComboBoxPickCity.Name = "metroComboBoxPickCity";
-            this.metroComboBoxPickCity.Size = new System.Drawing.Size(302, 29);
-            this.metroComboBoxPickCity.TabIndex = 1;
-            this.metroComboBoxPickCity.UseSelectable = true;
-            // 
             // metroComboBoxPickDistrict
             // 
             this.metroComboBoxPickDistrict.FormattingEnabled = true;
             this.metroComboBoxPickDistrict.ItemHeight = 23;
-            this.metroComboBoxPickDistrict.Location = new System.Drawing.Point(9, 114);
+            this.metroComboBoxPickDistrict.Items.AddRange(new object[] {
+            "Wonokromo",
+            "Benowo",
+            "Asem Rowo"});
+            this.metroComboBoxPickDistrict.Location = new System.Drawing.Point(9, 169);
             this.metroComboBoxPickDistrict.Name = "metroComboBoxPickDistrict";
             this.metroComboBoxPickDistrict.Size = new System.Drawing.Size(302, 29);
             this.metroComboBoxPickDistrict.TabIndex = 1;
@@ -155,6 +150,8 @@
             // 
             this.metroComboBoxPickProvince.FormattingEnabled = true;
             this.metroComboBoxPickProvince.ItemHeight = 23;
+            this.metroComboBoxPickProvince.Items.AddRange(new object[] {
+            "Jawa Timur"});
             this.metroComboBoxPickProvince.Location = new System.Drawing.Point(9, 59);
             this.metroComboBoxPickProvince.Name = "metroComboBoxPickProvince";
             this.metroComboBoxPickProvince.Size = new System.Drawing.Size(302, 29);
@@ -170,19 +167,10 @@
             this.metroLabel11.TabIndex = 0;
             this.metroLabel11.Text = "Detail Address";
             // 
-            // metroLabel3
-            // 
-            this.metroLabel3.AutoSize = true;
-            this.metroLabel3.Location = new System.Drawing.Point(8, 146);
-            this.metroLabel3.Name = "metroLabel3";
-            this.metroLabel3.Size = new System.Drawing.Size(31, 19);
-            this.metroLabel3.TabIndex = 0;
-            this.metroLabel3.Text = "City";
-            // 
             // metroLabel2
             // 
             this.metroLabel2.AutoSize = true;
-            this.metroLabel2.Location = new System.Drawing.Point(8, 91);
+            this.metroLabel2.Location = new System.Drawing.Point(8, 146);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(48, 19);
             this.metroLabel2.TabIndex = 0;
@@ -224,6 +212,7 @@
             this.metroTextBoxSendPhone.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.metroTextBoxSendPhone.CustomButton.UseSelectable = true;
             this.metroTextBoxSendPhone.CustomButton.Visible = false;
+            this.metroTextBoxSendPhone.Enabled = false;
             this.metroTextBoxSendPhone.Lines = new string[0];
             this.metroTextBoxSendPhone.Location = new System.Drawing.Point(8, 92);
             this.metroTextBoxSendPhone.MaxLength = 32767;
@@ -263,6 +252,7 @@
             this.metroTextBoxSendName.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.metroTextBoxSendName.CustomButton.UseSelectable = true;
             this.metroTextBoxSendName.CustomButton.Visible = false;
+            this.metroTextBoxSendName.Enabled = false;
             this.metroTextBoxSendName.Lines = new string[0];
             this.metroTextBoxSendName.Location = new System.Drawing.Point(9, 43);
             this.metroTextBoxSendName.MaxLength = 32767;
@@ -381,12 +371,12 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.metroTextBoxShipDetail);
             this.groupBox2.Controls.Add(this.metroComboBoxShipCity);
+            this.groupBox2.Controls.Add(this.metroLabel5);
+            this.groupBox2.Controls.Add(this.metroTextBoxShipDetail);
             this.groupBox2.Controls.Add(this.metroComboBoxShipDistrict);
             this.groupBox2.Controls.Add(this.metroComboBoxShipProvince);
             this.groupBox2.Controls.Add(this.metroLabel4);
-            this.groupBox2.Controls.Add(this.metroLabel5);
             this.groupBox2.Controls.Add(this.metroLabel6);
             this.groupBox2.Controls.Add(this.metroLabel12);
             this.groupBox2.Location = new System.Drawing.Point(361, 355);
@@ -426,21 +416,15 @@
             this.metroTextBoxShipDetail.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTextBoxShipDetail.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
-            // metroComboBoxShipCity
-            // 
-            this.metroComboBoxShipCity.FormattingEnabled = true;
-            this.metroComboBoxShipCity.ItemHeight = 23;
-            this.metroComboBoxShipCity.Location = new System.Drawing.Point(9, 169);
-            this.metroComboBoxShipCity.Name = "metroComboBoxShipCity";
-            this.metroComboBoxShipCity.Size = new System.Drawing.Size(302, 29);
-            this.metroComboBoxShipCity.TabIndex = 1;
-            this.metroComboBoxShipCity.UseSelectable = true;
-            // 
             // metroComboBoxShipDistrict
             // 
             this.metroComboBoxShipDistrict.FormattingEnabled = true;
             this.metroComboBoxShipDistrict.ItemHeight = 23;
-            this.metroComboBoxShipDistrict.Location = new System.Drawing.Point(9, 114);
+            this.metroComboBoxShipDistrict.Items.AddRange(new object[] {
+            "Wonokromo",
+            "Benowo",
+            "Asem Rowo"});
+            this.metroComboBoxShipDistrict.Location = new System.Drawing.Point(10, 169);
             this.metroComboBoxShipDistrict.Name = "metroComboBoxShipDistrict";
             this.metroComboBoxShipDistrict.Size = new System.Drawing.Size(302, 29);
             this.metroComboBoxShipDistrict.TabIndex = 1;
@@ -450,6 +434,8 @@
             // 
             this.metroComboBoxShipProvince.FormattingEnabled = true;
             this.metroComboBoxShipProvince.ItemHeight = 23;
+            this.metroComboBoxShipProvince.Items.AddRange(new object[] {
+            "Jawa Timur"});
             this.metroComboBoxShipProvince.Location = new System.Drawing.Point(9, 59);
             this.metroComboBoxShipProvince.Name = "metroComboBoxShipProvince";
             this.metroComboBoxShipProvince.Size = new System.Drawing.Size(302, 29);
@@ -465,19 +451,10 @@
             this.metroLabel4.TabIndex = 0;
             this.metroLabel4.Text = "Detail Address";
             // 
-            // metroLabel5
-            // 
-            this.metroLabel5.AutoSize = true;
-            this.metroLabel5.Location = new System.Drawing.Point(8, 146);
-            this.metroLabel5.Name = "metroLabel5";
-            this.metroLabel5.Size = new System.Drawing.Size(31, 19);
-            this.metroLabel5.TabIndex = 0;
-            this.metroLabel5.Text = "City";
-            // 
             // metroLabel6
             // 
             this.metroLabel6.AutoSize = true;
-            this.metroLabel6.Location = new System.Drawing.Point(8, 91);
+            this.metroLabel6.Location = new System.Drawing.Point(9, 146);
             this.metroLabel6.Name = "metroLabel6";
             this.metroLabel6.Size = new System.Drawing.Size(48, 19);
             this.metroLabel6.TabIndex = 0;
@@ -543,6 +520,9 @@
             // comboBoxFragile
             // 
             this.comboBoxFragile.FormattingEnabled = true;
+            this.comboBoxFragile.Items.AddRange(new object[] {
+            "Yes",
+            "No"});
             this.comboBoxFragile.Location = new System.Drawing.Point(341, 49);
             this.comboBoxFragile.Name = "comboBoxFragile";
             this.comboBoxFragile.Size = new System.Drawing.Size(301, 21);
@@ -551,6 +531,9 @@
             // comboBoxItemType
             // 
             this.comboBoxItemType.FormattingEnabled = true;
+            this.comboBoxItemType.Items.AddRange(new object[] {
+            "Glass",
+            "Electronic"});
             this.comboBoxItemType.Location = new System.Drawing.Point(9, 97);
             this.comboBoxItemType.Name = "comboBoxItemType";
             this.comboBoxItemType.Size = new System.Drawing.Size(302, 21);
@@ -629,18 +612,18 @@
             this.metroLabel18.AutoSize = true;
             this.metroLabel18.Location = new System.Drawing.Point(344, 87);
             this.metroLabel18.Name = "metroLabel18";
-            this.metroLabel18.Size = new System.Drawing.Size(69, 19);
+            this.metroLabel18.Size = new System.Drawing.Size(97, 19);
             this.metroLabel18.TabIndex = 3;
-            this.metroLabel18.Text = "Total Price";
+            this.metroLabel18.Text = "Total Price (idr)";
             // 
             // metroLabel17
             // 
             this.metroLabel17.AutoSize = true;
             this.metroLabel17.Location = new System.Drawing.Point(344, 28);
             this.metroLabel17.Name = "metroLabel17";
-            this.metroLabel17.Size = new System.Drawing.Size(117, 19);
+            this.metroLabel17.Size = new System.Drawing.Size(155, 19);
             this.metroLabel17.TabIndex = 3;
-            this.metroLabel17.Text = "Estimated Delivery";
+            this.metroLabel17.Text = "Estimated Delivery (days)";
             // 
             // groupBox6
             // 
@@ -657,7 +640,6 @@
             this.groupBox6.TabIndex = 2;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Service Information";
-            this.groupBox6.Enter += new System.EventHandler(this.groupBox6_Enter);
             // 
             // metroTextBoxEstDelivery
             // 
@@ -673,6 +655,7 @@
             this.metroTextBoxEstDelivery.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.metroTextBoxEstDelivery.CustomButton.UseSelectable = true;
             this.metroTextBoxEstDelivery.CustomButton.Visible = false;
+            this.metroTextBoxEstDelivery.Enabled = false;
             this.metroTextBoxEstDelivery.Lines = new string[0];
             this.metroTextBoxEstDelivery.Location = new System.Drawing.Point(344, 51);
             this.metroTextBoxEstDelivery.MaxLength = 32767;
@@ -693,11 +676,15 @@
             // 
             this.metroComboBoxDeliveryType.FormattingEnabled = true;
             this.metroComboBoxDeliveryType.ItemHeight = 23;
+            this.metroComboBoxDeliveryType.Items.AddRange(new object[] {
+            "Regular",
+            "Express"});
             this.metroComboBoxDeliveryType.Location = new System.Drawing.Point(9, 50);
             this.metroComboBoxDeliveryType.Name = "metroComboBoxDeliveryType";
             this.metroComboBoxDeliveryType.Size = new System.Drawing.Size(302, 29);
             this.metroComboBoxDeliveryType.TabIndex = 1;
             this.metroComboBoxDeliveryType.UseSelectable = true;
+            this.metroComboBoxDeliveryType.SelectedIndexChanged += new System.EventHandler(this.metroComboBoxDeliveryType_SelectedIndexChanged);
             // 
             // metroTextBoxTotalPrice
             // 
@@ -713,6 +700,7 @@
             this.metroTextBoxTotalPrice.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
             this.metroTextBoxTotalPrice.CustomButton.UseSelectable = true;
             this.metroTextBoxTotalPrice.CustomButton.Visible = false;
+            this.metroTextBoxTotalPrice.Enabled = false;
             this.metroTextBoxTotalPrice.Lines = new string[0];
             this.metroTextBoxTotalPrice.Location = new System.Drawing.Point(344, 108);
             this.metroTextBoxTotalPrice.MaxLength = 32767;
@@ -733,7 +721,7 @@
             // 
             this.metroButtonOrder.BackColor = System.Drawing.Color.DeepSkyBlue;
             this.metroButtonOrder.ForeColor = System.Drawing.Color.White;
-            this.metroButtonOrder.Location = new System.Drawing.Point(26, 777);
+            this.metroButtonOrder.Location = new System.Drawing.Point(26, 789);
             this.metroButtonOrder.Name = "metroButtonOrder";
             this.metroButtonOrder.Size = new System.Drawing.Size(652, 39);
             this.metroButtonOrder.TabIndex = 3;
@@ -744,11 +732,61 @@
             this.metroButtonOrder.UseSelectable = true;
             this.metroButtonOrder.Click += new System.EventHandler(this.metroButtonOrder_Click);
             // 
+            // metroProgressBar1
+            // 
+            this.metroProgressBar1.Location = new System.Drawing.Point(26, 776);
+            this.metroProgressBar1.Name = "metroProgressBar1";
+            this.metroProgressBar1.Size = new System.Drawing.Size(652, 10);
+            this.metroProgressBar1.TabIndex = 4;
+            // 
+            // metroComboBoxPickCity
+            // 
+            this.metroComboBoxPickCity.FormattingEnabled = true;
+            this.metroComboBoxPickCity.ItemHeight = 23;
+            this.metroComboBoxPickCity.Items.AddRange(new object[] {
+            "Surabaya"});
+            this.metroComboBoxPickCity.Location = new System.Drawing.Point(9, 114);
+            this.metroComboBoxPickCity.Name = "metroComboBoxPickCity";
+            this.metroComboBoxPickCity.Size = new System.Drawing.Size(302, 29);
+            this.metroComboBoxPickCity.TabIndex = 4;
+            this.metroComboBoxPickCity.UseSelectable = true;
+            // 
+            // metroLabel3
+            // 
+            this.metroLabel3.AutoSize = true;
+            this.metroLabel3.Location = new System.Drawing.Point(8, 91);
+            this.metroLabel3.Name = "metroLabel3";
+            this.metroLabel3.Size = new System.Drawing.Size(31, 19);
+            this.metroLabel3.TabIndex = 3;
+            this.metroLabel3.Text = "City";
+            // 
+            // metroComboBoxShipCity
+            // 
+            this.metroComboBoxShipCity.FormattingEnabled = true;
+            this.metroComboBoxShipCity.ItemHeight = 23;
+            this.metroComboBoxShipCity.Items.AddRange(new object[] {
+            "Surabaya"});
+            this.metroComboBoxShipCity.Location = new System.Drawing.Point(10, 114);
+            this.metroComboBoxShipCity.Name = "metroComboBoxShipCity";
+            this.metroComboBoxShipCity.Size = new System.Drawing.Size(302, 29);
+            this.metroComboBoxShipCity.TabIndex = 4;
+            this.metroComboBoxShipCity.UseSelectable = true;
+            // 
+            // metroLabel5
+            // 
+            this.metroLabel5.AutoSize = true;
+            this.metroLabel5.Location = new System.Drawing.Point(9, 91);
+            this.metroLabel5.Name = "metroLabel5";
+            this.metroLabel5.Size = new System.Drawing.Size(31, 19);
+            this.metroLabel5.TabIndex = 3;
+            this.metroLabel5.Text = "City";
+            // 
             // SendPacket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(709, 840);
+            this.Controls.Add(this.metroProgressBar1);
             this.Controls.Add(this.metroButtonOrder);
             this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
@@ -780,11 +818,9 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private MetroFramework.Controls.MetroTextBox metroTextBoxPicAddress;
-        private MetroFramework.Controls.MetroComboBox metroComboBoxPickCity;
         private MetroFramework.Controls.MetroComboBox metroComboBoxPickDistrict;
         private MetroFramework.Controls.MetroComboBox metroComboBoxPickProvince;
         private MetroFramework.Controls.MetroLabel metroLabel11;
-        private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private MetroFramework.Controls.MetroLabel metroLabel1;
         private System.Windows.Forms.GroupBox groupBox3;
@@ -799,11 +835,9 @@
         private MetroFramework.Controls.MetroLabel metroLabel10;
         private System.Windows.Forms.GroupBox groupBox2;
         private MetroFramework.Controls.MetroTextBox metroTextBoxShipDetail;
-        private MetroFramework.Controls.MetroComboBox metroComboBoxShipCity;
         private MetroFramework.Controls.MetroComboBox metroComboBoxShipDistrict;
         private MetroFramework.Controls.MetroComboBox metroComboBoxShipProvince;
         private MetroFramework.Controls.MetroLabel metroLabel4;
-        private MetroFramework.Controls.MetroLabel metroLabel5;
         private MetroFramework.Controls.MetroLabel metroLabel6;
         private MetroFramework.Controls.MetroLabel metroLabel12;
         private System.Windows.Forms.GroupBox groupBox5;
@@ -825,5 +859,10 @@
         private MetroFramework.Controls.MetroComboBox metroComboBoxDeliveryType;
         private MetroFramework.Controls.MetroTextBox metroTextBoxTotalPrice;
         private MetroFramework.Controls.MetroButton metroButtonOrder;
+        private MetroFramework.Controls.MetroProgressBar metroProgressBar1;
+        private MetroFramework.Controls.MetroComboBox metroComboBoxPickCity;
+        private MetroFramework.Controls.MetroLabel metroLabel3;
+        private MetroFramework.Controls.MetroComboBox metroComboBoxShipCity;
+        private MetroFramework.Controls.MetroLabel metroLabel5;
     }
 }

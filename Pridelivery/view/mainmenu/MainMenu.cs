@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MetroFramework.Forms;
 using Pridelivery.Repository.Model;
+using Pridelivery.utility;
 using Pridelivery.view.profile;
 using Pridelivery.view.sendpacket;
 
@@ -69,6 +70,16 @@ namespace Pridelivery.view.mainmenu
         {
             var form = new SendPacket(profile);
             form.ShowDialog();
+        }
+
+        private void metroTileExitUser_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void metroTileHistoryUser_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
